@@ -17,6 +17,8 @@ A Google Chrome extension to turn Mantis issues numbers into Mantis links.
 
 6. Reload Slack page
 
+PS: It doesn't work with the Slack app, you need to use the web interface (http://*.slack.com)
+
 ### Credits
 
 Caio SBA <caiosba@gmail.com>, based on https://github.com/caseman72/slack.com.js.
