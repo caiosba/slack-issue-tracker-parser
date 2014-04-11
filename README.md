@@ -13,7 +13,9 @@ A Google Chrome extension to turn Mantis issues numbers into Mantis links.
 
 4. The extension will autoupdate via Github but you can click "Update Extensions Now" to force a check/update
 
-5. Define the Mantis host on the extension options page
+5. Define the Mantis host with protocol (e.g.: http://mantis.mydomain.com) on the extension options page
+
+6. Reload Slack page
 
 ### Credits
 
