@@ -5,7 +5,7 @@ A Google Chrome extension to turn Mantis issues numbers into Mantis links.
 
 ### Installation
 
-1. Save the CRX to computer: https://github.com/caiosba/stack.com.js/blob/master/extension/stack.com.js.crx
+1. Save the CRX to computer: https://github.com/caiosba/slack.com.js/raw/master/extension/slack.com.js.crx
 
 2. Open Chrome Extensions: chrome://extensions/
 
