@@ -22,6 +22,6 @@ $(function() {
 
 	// Watches the animation event and parses li if they are inserted
 	anime_watch("span.message_content", function(span) {
-		$(span).mantisize();
+		$(span).parseIssueTrackerNumbers();
 	});
 });

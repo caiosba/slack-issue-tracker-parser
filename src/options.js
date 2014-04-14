@@ -1,13 +1,13 @@
 function saveOptions() {
-  var host = document.getElementById('host').value;
-  chrome.storage.sync.set({'mantisSlack.mantisHost': host}, function() {
+  var url = document.getElementById('url').value;
+  chrome.storage.sync.set({'SITP.urlFormat': url}, function() {
     alert('Options saved.');
   });
 }
 
 function loadOptions() {
-  chrome.storage.sync.get({'mantisSlack.mantisHost': 'http://mantis.localhost'}, function(host) {
-    document.getElementById('host').value = host['mantisSlack.mantisHost'];
+  chrome.storage.sync.get({'SITP.urlFormat': 'http://myissuetracker.com/issues/view?id=####'}, function(url) {
+    document.getElementById('url').value = url['SITP.urlFormat'];
   })
 }
 
