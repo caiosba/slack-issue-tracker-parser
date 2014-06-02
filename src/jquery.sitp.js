@@ -21,7 +21,7 @@
         if (!/^https?:\/\//.test(url)) {
           url = 'http://' + url;
         }
-        container.html(container.html().replace(/#([0-9]+)/, function(match, contents, offset, s) {
+        container.html(container.html().replace(/#([0-9]+)/g, function(match, contents, offset, s) {
           return "<a class='sitp-link' href='" + url.replace('####', contents) + "' target='_blank'><span>#</span>" + contents + "</a>";
         }));
       });

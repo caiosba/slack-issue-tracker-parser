@@ -15,5 +15,5 @@
    "name": "Slack Issue Tracker Parser",
    "update_url": "https://raw.github.com/caiosba/slack.com.js/master/update_manifest.xml",
    "permissions": [ "activeTab", "storage" ],
-   "version": "0.0.8"
+   "version": "0.0.9"
 }
