@@ -14,6 +14,8 @@ it to turn issues numbers (e.g.: #1234) into links to the issue on your instance
 
 4. The extension will autoupdate via Github but you can click "Update Extensions Now" to force a check/update
 
+Or: You can install it from [Google Chrome App Store](https://chrome.google.com/webstore/detail/slack-issue-tracker-parse/pacaiaegphnemjjkoihhjahbpndabnch).
+
 5. On the extension options page, define the URL format that fits your issue tracker, putting a '####'
    where the issue number should be located (e.g.: http://mantis.yourdomain.com/view.php?id=####)
 
