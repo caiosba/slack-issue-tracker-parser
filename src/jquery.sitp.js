@@ -17,12 +17,14 @@
     return this.not(opts.exclude).each(function() {
       var container = $(this);
       chrome.storage.sync.get({'SITP.urlFormat': 'http://myissuetracker.com/issues/view?id=####'}, function(data) {
-        var url = data['SITP.urlFormat'];
+        var url = data['SITP.urlFormat'],
+          prefix = data['SITP.issuePrefix'] || '#',
+          regex = new RegExp('\b(' + prefix + '([0-9]+))\b', 'g');
         if (!/^https?:\/\//.test(url)) {
           url = 'http://' + url;
         }
-        container.html(container.html().replace(/#([0-9]+)/g, function(match, contents, offset, s) {
-          return "<a class='sitp-link' href='" + url.replace('####', contents) + "' target='_blank'><span>#</span>" + contents + "</a>";
+        container.html(container.html().replace(regex, function(match, contents, offset, s) {
+          return "<a class='sitp-link' href='" + url.replace('####', contents) + "' target='_blank'><span>" + prefix + "</span>" + contents + "</a>";
         }));
       });
     });
