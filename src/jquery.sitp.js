@@ -1,3 +1,5 @@
+/*global chrome,jQuery*/
+
 /*
  * jQuery Issue Tracker Parser plugin 0.0.1
  *
@@ -9,6 +11,7 @@
  *
  * Date: Sex Abr 11 01:56:24 BRT 2014
  */
+ 
 (function($) {
   $.fn.parseIssueTrackerNumbers = function(options) {
 
@@ -16,19 +19,23 @@
 
     return this.not(opts.exclude).each(function() {
       var container = $(this);
-      chrome.storage.sync.get({'SITP.urlFormat': 'http://myissuetracker.com/issues/view?id=####'}, function(data) {
+      chrome.storage.sync.get({
+        'SITP.urlFormat': 'http://myissuetracker.com/issues/view?id=####',
+        'SITP.issuePrefix': '#'
+      }, function(data) {
         var url = data['SITP.urlFormat'],
           prefix = data['SITP.issuePrefix'] || '#',
-          regex = new RegExp('\b(' + prefix + '([0-9]+))\b', 'g');
+          regex = new RegExp('(^|\\s+)(' + prefix + '[0-9]+)', 'gm');
+        
         if (!/^https?:\/\//.test(url)) {
           url = 'http://' + url;
         }
-        container.html(container.html().replace(regex, function(match, contents, offset, s) {
-          return "<a class='sitp-link' href='" + url.replace('####', contents) + "' target='_blank'><span>" + prefix + "</span>" + contents + "</a>";
+        container.html(container.html().replace(regex, function(match, space, contents/*, offset, s*/) {
+          return (space || '') + "<a class='sitp-link' href='" + url.replace('####', contents) + "' target='_blank'>" + contents + "</a>";
         }));
       });
     });
-  }
+  };
 
   $.fn.unparseIssueTrackerNumbers = function(options) {
     var opts = $.extend({}, $.fn.parseIssueTrackerNumbers.defaults, options);
@@ -39,7 +46,7 @@
         span.replaceWith(link.text());
       });
     });
-  }
+  };
 
   $.fn.parseIssueTrackerNumbers.defaults = { exclude : '' };
 })(jQuery);
