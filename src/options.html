@@ -6,8 +6,17 @@
   </head>
   <body>
     <h1>Preferences for Slack Issue Tracker Parser</h1>
-    <label>Issue tracker URL (put a '####' where the issue number must be placed):</label>
-    <p><input id="url" size="100" /></p>
+    
+    <p>
+      <label>Issue tracker URL (put a '####' where the issue number must be placed):</label>
+      <p><input id="url" size="100" /></p>
+    </p>
+    
+    <p>
+      <label>Prefix (defaults to #) (i.e., AA- wil mean AA-1234 is a valid issue id):</label>
+      <p><input id="prefix" size="100" /></p>
+    </p>
+    
     <button id="save">Save</button>
     <script src="options.js"></script>
   </body>

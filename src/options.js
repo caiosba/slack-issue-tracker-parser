@@ -1,13 +1,22 @@
 function saveOptions() {
-  var url = document.getElementById('url').value;
-  chrome.storage.sync.set({'SITP.urlFormat': url}, function() {
+  var url = document.getElementById('url').value,
+    prefix = document.getElementById('prefix').value;
+    
+  chrome.storage.sync.set({
+    'SITP.urlFormat': url,
+    'SITP.issuePrefix': prefix
+  }, function() {
     alert('Options saved.');
   });
 }
 
 function loadOptions() {
-  chrome.storage.sync.get({'SITP.urlFormat': 'http://myissuetracker.com/issues/view?id=####'}, function(url) {
+  chrome.storage.sync.get({
+    'SITP.urlFormat': 'http://myissuetracker.com/issues/view?id=####',
+    'SITP.issuePrefix': '#'
+  }, function(url) {
     document.getElementById('url').value = url['SITP.urlFormat'];
+    document.getElementById('prefix').value = url['SITP.issuePrefix'];
   })
 }
 
