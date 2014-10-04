@@ -31,7 +31,7 @@
           url = 'http://' + url;
         }
         container.html(container.html().replace(regex, function(match, space, contents/*, offset, s*/) {
-          return (space || '') + "<a class='sitp-link' href='" + url.replace('####', contents) + "' target='_blank'>" + contents + "</a>";
+          return (space || '') + "<a class='sitp-link' href='" + url.replace('####', contents) + "' target='_blank'>" + prefix + contents + "</a>";
         }));
       });
     });
