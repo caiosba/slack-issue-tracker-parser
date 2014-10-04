@@ -25,7 +25,7 @@
       }, function(data) {
         var url = data['SITP.urlFormat'],
           prefix = data['SITP.issuePrefix'] || '#',
-          regex = new RegExp('(^|\\s+)(' + prefix + '[0-9]+)', 'gm');
+          regex = new RegExp('(^|\\s+)' + prefix + '([0-9]+)', 'gm');
         
         if (!/^https?:\/\//.test(url)) {
           url = 'http://' + url;
