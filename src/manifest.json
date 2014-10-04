@@ -13,7 +13,7 @@
    "options_page": "options.html",
    "manifest_version": 2,
    "name": "Slack Issue Tracker Parser",
-   "update_url": "https://raw.github.com/caiosba/slack.com.js/master/update_manifest.xml",
+   "short_name": "SITP",
    "permissions": [ "activeTab", "storage" ],
    "version": "0.0.12"
 }
