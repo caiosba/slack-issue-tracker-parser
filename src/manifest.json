@@ -15,5 +15,5 @@
    "name": "Slack Issue Tracker Parser",
    "short_name": "SITP",
    "permissions": [ "activeTab", "storage" ],
-   "version": "0.0.13"
+   "version": "0.0.14"
 }

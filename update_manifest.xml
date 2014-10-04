@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gupdate xmlns="http://www.google.com/update2/response" protocol="2.0">
 	<app appid="kbbjmfddfbijkopfgibgmedjfeaagobl">
-		<updatecheck codebase="https://github.com/caiosba/slack.com.js/raw/master/extension/slack.com.js.crx" version="0.0.13" />
+		<updatecheck codebase="https://github.com/caiosba/slack.com.js/raw/master/extension/slack.com.js.crx" version="0.0.14" />
 	</app>
 </gupdate>
